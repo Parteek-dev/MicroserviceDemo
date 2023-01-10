@@ -1,0 +1,20 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: RATING-SERVICE
+  data:
+    mongodb:
+      database: microservice
+      uri: mongodb://localhost:27017
+
+#this will make this user service as a client and register with service registry
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9000/eureka
